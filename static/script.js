@@ -137,7 +137,6 @@ function startMessagePolling() {
   let initialLoad = true;
   getMessages(initialLoad);
 
-  // TODO
   setInterval(async () => {
     await getMessages();
   }, 100);
@@ -195,7 +194,6 @@ async function updateUserName() {
       throw new Error('Network response was not ok');
     }
     resp_message = await response.json();
-    console.log(resp_message);
 
   } catch (error) {
     console.error('Failed to fetch messages:', error);
@@ -220,7 +218,6 @@ async function updatePassword() {
       throw new Error('Network response was not ok');
     }
     resp_message = await response.json();
-    console.log(resp_message);
 
   } catch (error) {
     console.error('Failed to fetch messages:', error);

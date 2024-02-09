@@ -23,7 +23,7 @@
     <div>Chatting in:</div>
     <h3 class="display">
       <span class="roomName">{{ room['name'] }}</span>
-      <!-- TODO: when clicked,
+      <!-- TODO: when clicked, ==> DONE in JS DOM
         - remove `hide` from the `edit` h3 below
         - add `hide` to the parent h3 here -->
       <a href="#"><span class="material-symbols-outlined">edit</span></a></h3>
@@ -91,7 +91,6 @@
 </div>
 
 <script>
-  // document.addEventListener('DOMContentLoaded', updateRoomName);
   startMessagePolling();
 
 </script>

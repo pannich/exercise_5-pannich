@@ -103,7 +103,6 @@ def require_api_key(f):
 def index():
     print("index") # For debugging
     user = get_user_from_cookie(request)
-    print(request)
 
     if user:
         rooms = query_db('select * from rooms')
@@ -270,7 +269,6 @@ def change_room_name():
 @app.route('/api/messages', methods=['GET'])
 @require_api_key
 def get_messages():
-    print('get messagess')
     room_id = request.args.get('room_id')  # Assuming you pass room_id as a query parameter
     if not room_id:
         return jsonify({'error': 'Room ID is required'}), 400
@@ -310,8 +308,6 @@ def post_message():
     INSERT INTO messages (user_id, room_id, body)
     VALUES (?, ?, ?) RETURNING user_id, room_id, body
     ''', (user_id, room_id, body), one=True)
-    # print("------")
-    # print(message['body'])
 
     try:
         return jsonify({'user_name': user['name'], 'body': message['body']}), 200
