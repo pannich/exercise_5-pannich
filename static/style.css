@@ -118,7 +118,7 @@ button {
 
 .hero form {
   grid-column: 2/3;
-  grid-row: 2/3;  
+  grid-row: 2/3;
 }
 
 .hero button {
@@ -289,6 +289,7 @@ button {
   grid-template-rows: min-content;
   grid-auto-rows: min-content;
   height: auto;
+  overflow-y: scroll;
 }
 
 .chat message {

@@ -10,6 +10,7 @@
     WATCH_PARTY_USER_ID = {{ user.id }};
     WATCH_PARTY_API_KEY = '{{ user.api_key }}';
     {% endif %}
+    var room_id = "{{ room['id'] }}"; // Define room_id
   </script>
   <script src="/static/script.js"></script>
 </head>
@@ -22,7 +23,7 @@
     <div>Chatting in:</div>
     <h3 class="display">
       <span class="roomName">{{ room['name'] }}</span>
-      <!-- TODO: when clicked, 
+      <!-- TODO: when clicked,
         - remove `hide` from the `edit` h3 below
         - add `hide` to the parent h3 here -->
       <a href="#"><span class="material-symbols-outlined">edit</span></a></h3>
@@ -52,7 +53,7 @@
       <form>
         <label for="comment">What do you have to say?</label>
         <textarea name="comment"></textarea>
-        <button type="submit" value="Post">Post</button>
+        <button id="submitbtn" type="submit" value="Post">Post</button>
       </form>
     </div>
     <div class="messages">
@@ -71,9 +72,9 @@
       <message>
         <author>Chatty Cat</author>
         <content>
-          Meow meow meow meow meow meow meow meow meow meow meow 
-          meow meow meow meow meow meow meow meow meow meow meow 
-          meow meow meow meow meow meow meow meow meow meow meow 
+          Meow meow meow meow meow meow meow meow meow meow meow
+          meow meow meow meow meow meow meow meow meow meow meow
+          meow meow meow meow meow meow meow meow meow meow meow
         </content>
       </message>
       <message>
@@ -90,7 +91,9 @@
 </div>
 
 <script>
-startMessagePolling();
+  // document.addEventListener('DOMContentLoaded', updateRoomName);
+  startMessagePolling();
+
 </script>
 
 </body>
