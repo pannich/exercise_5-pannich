@@ -140,7 +140,7 @@ function startMessagePolling() {
   // TODO
   setInterval(async () => {
     await getMessages();
-  }, 10000);
+  }, 100);
   return;
 }
 
