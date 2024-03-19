@@ -50,8 +50,8 @@ function hide_room_edit() {
 }
 
 async function postMessage() {
-  var resultsContainer = document.body.querySelector(".messages");
-  resultsContainer.innerHTML = '';
+  var resultsContainer = document.body.querySelector(".messages"); //no need
+  resultsContainer.innerHTML = ''; // no need
 
   const bodyValue = document.querySelector('textarea[name="comment"]').value;
 
